@@ -1,0 +1,33 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EC2RestrictRegion",
+            "Effect": "Allow",
+            "Action": "ec2:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": [
+                        "us-east-1",
+                        "us-west-1"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "LambdaRestrictRegion",
+            "Effect": "Allow",
+            "Action": "lambda:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": [
+                        "us-east-1",
+                        "us-west-1"
+                    ]
+                }
+            }
+        }
+    ]
+}

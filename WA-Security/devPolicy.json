@@ -1,0 +1,45 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CreatePolicy",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreatePolicy",
+                "iam:CreatePolicyVersion",
+                "iam:DeletePolicyVersion"
+            ],
+            "Resource": "arn:aws:iam::631353662337:policy/app1*"
+        },
+        {
+            "Sid": "CreateRole",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateRole"
+            ],
+            "Resource": "arn:aws:iam::631353662337:role/app1*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:PermissionsBoundary": "arn:aws:iam::631353662337:policy/restrict-region-boundary"
+                }
+            }
+        },
+        {
+            "Sid": "AttachDetachRolePolicy",
+            "Effect": "Allow",
+            "Action": [
+                "iam:DetachRolePolicy",
+                "iam:AttachRolePolicy"
+            ],
+            "Resource": "arn:aws:iam::631353662337:role/app1*",
+            "Condition": {
+                "ArnEquals": {
+                    "iam:PolicyARN": [
+                        "arn:aws:iam::631353662337:policy/*",
+                        "arn:aws:iam::aws:policy/*"
+                    ]
+                }
+            }
+        }      
+    ]
+}

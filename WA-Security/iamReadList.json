@@ -1,0 +1,22 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Get",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListPolicies",
+                "iam:GetRole",
+                "iam:GetPolicyVersion",
+                "iam:ListRoleTags",
+                "iam:GetPolicy",
+                "iam:ListPolicyVersions",
+                "iam:ListAttachedRolePolicies",
+                "iam:ListRoles",
+                "iam:ListRolePolicies",
+                "iam:GetRolePolicy"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
