@@ -24,3 +24,16 @@
 - Created a role for lambda using [Lambda-Role](LambdaCrossAccBucketPolicy/Lambda-Role.json) in account1
 - Added [S3-Bucket-Policy.json](LambdaCrossAccBucketPolicy/S3-Bucket-Policy.json) to bucket in account2
 - Created Lambda function using [Lambda](LambdaCrossAccBucketPolicy/Lambda.py) in account1 to list objects in account2 bucket and tested ✅
+
+### Automated IAM User Cleanup
+- Created stack with [iam-user-cleanup.yaml](AutoIAMUserCleanup/cloudformation-iam-user-cleanup.yaml)
+- Subscribed to SNS topic email for results of Lambda cleanup function
+- Tested function showing sever users/roles that need cleanup, example results below
+    - Role arn:aws:iam::631353662337:role/DemoRoleForEC2 has not been used since 2025-08-19 22:45:49+00:00 and needs cleanup
+    - User aws-examples has not logged in since 2025-08-19 00:01:58+00:00 and needs cleanup
+- To allow Lambda funtion to automatically perform cleanup add permissions to role:             
+    - iam:DeleteAccessKey
+    - iam:DeleteUser
+    - iam:DeleteRole
+    - iam:UpdateAccessKey
+    - iam:UpdateUser
