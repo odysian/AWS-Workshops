@@ -1,4 +1,4 @@
-# Security
+# Security - IAM
 ### Permission Boundaries for Role Creation
 
 - Created [permBoundary.json](./PermBoundary/permBoundary.json) to restrict EC2 and Lambda actions to us-east-1 and us-west-1
