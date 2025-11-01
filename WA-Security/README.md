@@ -11,12 +11,16 @@
 - Created second role with `permBoundary` as permission boundary.
 - Switched to role, checked EC2 dashboard to confirm everything worked correctly ✅
 
- **Summary: Created policies to restrict access, created developer role that allowed devs to create other roles granting access only to EC2 and Lambda.**
+**Summary: Created policies to restrict access, created developer role that allowed devs to create other roles granting access only to EC2 and Lambda.**
 
- ### Tag Based Access Control
- - Created policies located in [TagBasedAccess](./TagBasedAccess) 
- - Created role named ec2-admin-team-alpha and attached recently created policies 
- - Tested tag based permission by trying to launch an instance with tag `Team: Beta` which correctly resulted in an error
- - Switched tag to `Team: Alpha` and instance successfully launched ✅
- - Attempted to switch the tag to `Team: Test` which was restricted ✅
+### Tag Based Access Control
+- Created policies located in [TagBasedAccess](./TagBasedAccess) 
+- Created role named ec2-admin-team-alpha and attached recently created policies 
+- Tested tag based permission by trying to launch an instance with tag `Team: Beta` which correctly resulted in an error
+- Switched tag to `Team: Alpha` and instance successfully launched ✅
+- Attempted to switch the tag to `Team: Test` which was restricted ✅
 
+### Labmda Cross Account Using Bucket Policy
+- Created a role for lambda using [Lambda-Role](LambdaCrossAccBucketPolicy/Lambda-Role.json) in account1
+- Added [S3-Bucket-Policy.json](LambdaCrossAccBucketPolicy/S3-Bucket-Policy.json) to bucket in account2
+- Created Lambda function using [Lambda](LambdaCrossAccBucketPolicy/Lambda.py) in account1 to list objects in account2 bucket and tested ✅
