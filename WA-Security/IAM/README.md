@@ -20,7 +20,7 @@
 - Switched tag to `Team: Alpha` and instance successfully launched ✅
 - Attempted to switch the tag to `Team: Test` which was restricted ✅
 
-### Labmda Cross Account Using Bucket Policy
+### Lambda Cross Account Using Bucket Policy
 - Created a role for lambda using [Lambda-Role](LambdaCrossAccBucketPolicy/Lambda-Role.json) in account1
 - Added [S3-Bucket-Policy.json](LambdaCrossAccBucketPolicy/S3-Bucket-Policy.json) to bucket in account2
 - Created Lambda function using [Lambda](LambdaCrossAccBucketPolicy/Lambda.py) in account1 to list objects in account2 bucket and tested ✅
