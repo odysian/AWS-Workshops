@@ -10,6 +10,7 @@
 - Edited trust policy principal to allow IAM users in my account to switch to the role
 - Created second role with `permBoundary` as permission boundary.
 - Switched to role, checked EC2 dashboard to confirm everything worked correctly ✅
+
  **Summary: Created policies to restrict access, created developer role that allowed devs to create other roles granting access only to EC2 and Lambda.**
 
  ### Tag Based Access Control
@@ -19,5 +20,3 @@
  - Switched tag to `Team: Alpha` and instance successfully launched ✅
  - Attempted to switch the tag to `Team: Test` which was restricted ✅
 
- ### Auto Deployment of IAM with CloudFormation
- - 
