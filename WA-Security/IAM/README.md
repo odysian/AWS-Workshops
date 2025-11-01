@@ -37,3 +37,8 @@
     - iam:DeleteRole
     - iam:UpdateAccessKey
     - iam:UpdateUser
+
+### Lambda Cross Account IAM Role Assumption
+- Created role for lambda in account2: [LambdaListBucketRole.json](LambdaCrossAccRole/LambdaListBucketRole.json)
+- Created role for lambda in account1, replace account numbers in policy: [LambdaAssumeRoles.json](LambdaCrossAccRole/LambdaAssumeRoles.json)
+- Create Lambda function [LambdaAssumeRoles.py](LambdaCrossAccRole/LambdaAssumeRoles.py), replace enterAccount2CopiedARNhere with LambdaListBucketRole ARN
