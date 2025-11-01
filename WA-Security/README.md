@@ -18,3 +18,6 @@
  - Tested tag based permission by trying to launch an instance with tag `Team: Beta` which correctly resulted in an error
  - Switched tag to `Team: Alpha` and instance successfully launched ✅
  - Attempted to switch the tag to `Team: Test` which was restricted ✅
+
+ ### Auto Deployment of IAM with CloudFormation
+ - 
